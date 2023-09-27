@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Define the patient list view -->
+        <record id="view_patient_tree" model="ir.ui.view">
+            <field name="name">dr_patients.patient.tree</field>
+            <field name="model">dr_patients.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patient List">
+                    <field name="patient_id"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="date_of_birth"/>
+                    <!-- Add other fields you want to display in the list view -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Define the action for the patient list view -->
+        <record id="action_patient_list" model="ir.actions.act_window">
+            <field name="name">Patient List</field>
+            <field name="res_model">dr_patients.patient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_patient_tree"/> <!-- Reference to the view defined above -->
+            <field name="domain">[]</field>
+            <!-- Add other fields as needed -->
+        </record>
+
+        <!-- Define a menu item for the patient list -->
+        <menuitem id="menu_patient_list" name="Patient List" parent="menu_patient" action="action_patient_list" sequence="1"/>
+    </data>
+</odoo>

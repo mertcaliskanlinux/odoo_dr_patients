@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- Patient Modeli için Form Görünümü -->
+        <record id="view_patient_form" model="ir.ui.view">
+            <field name="name">dr_patients.patient.form</field>
+            <field name="model">dr_patients.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="patient_id" readonly="1"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="full_name" readonly="1"/>
+                            <field name="date_of_birth"/>
+                            <field name="age" readonly="1"/>
+                            <field name="address"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="national_id_no"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Patient Modeli için Ağaç Görünümü -->
+        <record id="view_patient_tree" model="ir.ui.view">
+            <field name="name">dr_patients.patient.tree</field>
+            <field name="model">dr_patients.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="patient_id"/>
+                    <field name="full_name"/>
+                    <field name="date_of_birth"/>
+                    <field name="age"/>
+                    <field name="address"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="national_id_no"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Patient Menüsü -->
+        <menuitem id="menu_patient_root" name="Patients" sequence="10"/>
+        <menuitem id="menu_patient_list" name="Patient List" parent="menu_patient_root" action="action_patient_list"/>
+        
+        <!-- Patient Aksiyonu -->
+        <record id="action_patient_list" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">dr_patients.patient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_patient_tree"/>
+        </record>
+    </data>
+</odoo>
