@@ -14,7 +14,8 @@
     'depends': ['base', 'sale'],
     'data': [
         'views/appointment_wizard.xml',  # Sihirbaz görünümünü ekleyin
-        'views/patient_list.xml',  # Doktor görünümünü ekleyin
+        # 'views/patient_list.xml',  # Doktor görünümünü ekleyin
+        # 'views/doctor.xml',  # Hasta görünümünü ekleyin
         'views/menu.xml',  # Menü görünümünü ekleyin
     ],
     'installable': True,

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!-- Doctor Modeli için Form Görünümü -->
+        <record id="view_doctor_form" model="ir.ui.view">
+            <field name="name">dr_patients.doctor.form</field>
+            <field name="model">dr_patients.doctor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- Doktor modelinin alanlarını ekleyin -->
+                </form>
+            </field>
+        </record>
+
+        <!-- Doctor Modeli için Ağaç Görünümü -->
+        <record id="view_doctor_tree" model="ir.ui.view">
+            <field name="name">dr_patients.doctor.tree</field>
+            <field name="model">dr_patients.doctor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Doktor modelinin alanlarını ekleyin -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Doctor Menüsü -->
+        <menuitem id="menu_doctor" name="Doctors" sequence="1"/>
+        <menuitem id="menu_doctor_list" name="Doctor List" parent="menu_doctor" action="action_doctor_list" sequence="1"/>
+        <!-- Diğer menü öğelerini ekleyin -->
+    </data>
+</odoo>
