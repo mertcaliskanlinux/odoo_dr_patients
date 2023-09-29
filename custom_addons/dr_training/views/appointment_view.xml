@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+
+    <record id="appointment_tree" model="ir.ui.view">
+            <field name="name">dr_patients.appointment.tree</field>
+            <field name="model">dr_patients.appointment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="doctor"/>
+                    <field name="patient"/>
+
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="action_dr_training_appointment" model="ir.actions.act_window">
+    
+        <field name="name">Appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr_patients.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+    
+
+
+    
+
+    <menuitem id="menu_appointment_root"
+        name="Appointment"
+        parent="menu_dr_training_root"
+        sequence="10"/>
+
+
+
+    <menuitem id="menu_appointment"
+             name="Appointment of Departments"
+             action="action_dr_training_appointment"
+             parent="menu_appointment_root"
+             sequence="10"
+             />
+
+
+</odoo>
+
+
+
+
+
